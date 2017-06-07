@@ -1,0 +1,34 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  pre:
+    - pip install awscli
+    - pip install awsebcli
+  override:
+    - docker info
+    - docker build --rm=false -t ppavlov/sonarqube .
+   
+test:
+  override:
+    - docker run -d -p 9000:9000 -p 9092:9092 ppavlov/sonarqube; sleep 10
+    - curl --retry 10 --retry-delay 5 -v http://localhost:9000/
+
+deployment:
+  hub:
+    branch: master
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push ppavlov/sonarqube
+   
+  eb:
+    branch: master
+    commands:
+      - bash ./setup-eb.sh
+      - eb deploy --profile default
+
+#  elasticbeanstalk:
+#    branch: master
+#    commands:
+#      - ./deploy.sh $CIRCLE_SHA1
