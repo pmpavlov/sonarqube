@@ -2,9 +2,9 @@
   "AWSEBDockerrunVersion": 2,
   "volumes": [
     {
-      "name": "sonarqube",
+      "name": "sonarlogs",
       "host": {
-        "sourcePath": "/var/sonarqube"
+        "sourcePath": "/opt/sonar/logs"
       }
     }
   ],
@@ -26,8 +26,8 @@
       ],
       "mountPoints": [
         {
-          "sourceVolume": "sonarqube",
-          "containerPath": "/var/sonarqube"
+          "sourceVolume": "sonarlogs",
+          "containerPath": "/opt/sonar/logs"
         }
       ]
     }
