@@ -1,0 +1,35 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "volumes": [
+    {
+      "name": "sonarqube",
+      "host": {
+        "sourcePath": "/var/sonarqube"
+      }
+    }
+  ],
+  "containerDefinitions": [
+    {
+      "name": "sonarqube",
+      "image": "sonarqube:alpine",
+      "essential": true,
+      "memory": 512,
+      "portMappings": [
+        {
+          "hostPort": 9000,
+          "containerPort": 9000
+        },
+        {
+          "hostPort": 9092,
+          "containerPort": 9092
+        }
+      ],
+      "mountPoints": [
+        {
+          "sourceVolume": "sonarqube",
+          "containerPath": "/var/sonarqube"
+        }
+      ]
+    }
+  ]
+}
