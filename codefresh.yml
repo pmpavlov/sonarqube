@@ -6,7 +6,7 @@ steps:
     type: build
     title: Building
     description: Building the sonarqube image...
-    image-name: ppavlov/sonarqube:tag
+    image-name: ppavlov/sonarqube
     tag: ${{CF_BRANCH}}
 
   perform_tests:
