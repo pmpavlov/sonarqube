@@ -9,19 +9,19 @@ steps:
     image-name: ppavlov/sonarqube:tag
     tag: ${{CF_BRANCH}}
 
-perform_tests:
-    image_name: ppavlov/sonarqube:tag
+  perform_tests:
+    image_name: ppavlov/sonarqube
     description: Performing unit tests...
     commands:
       - docker run -d -p 9000:9000 -p 9092:9092 ppavlov/sonarqube:tag; sleep 10
       - curl --retry 10 --retry-delay 5 -v http://localhost:9000/
 
-push to registry:
+  push_to_registry:
     type: push
     candidate: ${{build-step}}
     tag: ${{CF_BRANCH}}
 
-deploy to ecs:
+  deploy_to_ecs:
     image: codefresh/cf-deploy-ecs
     commands:
       - cfecs-update eu-west-1 <ecs-cluster-name> <ecs-service-name>
