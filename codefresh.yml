@@ -6,8 +6,8 @@ steps:
     type: build
     title: Building
     description: Building the sonarqube image...
-    image-name: ppavlov/sonarqube
-    tag: ${{CF_BRANCH}}
+    image_name: ppavlov/sonarqube
+    tag: ${{CF_BRANCH_TAG_NORMALIZED}}
 
   perform_tests:
     image: ${{build_step}}
@@ -19,7 +19,7 @@ steps:
   push_to_registry:
     type: push
     candidate: ${{build-step}}
-    tag: ${{CF_BRANCH}}
+    tag: ${{CF_BRANCH_TAG_NORMALIZED}}
 
   deploy_to_ecs:
     image: codefresh/cf-deploy-ecs
