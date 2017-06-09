@@ -2,7 +2,7 @@
 version: '1.0'
 
 steps:
-  build-step:
+  build_step:
     type: build
     title: Building
     description: Building the sonarqube image...
@@ -18,7 +18,7 @@ steps:
 
   push_to_registry:
     type: push
-    candidate: ${{build-step}}
+    candidate: ${{build_step}}
     tag: ${{CF_BRANCH_TAG_NORMALIZED}}
 
   deploy_to_ecs:
