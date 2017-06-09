@@ -16,12 +16,12 @@ perform_tests:
       - docker run -d -p 9000:9000 -p 9092:9092 ppavlov/sonarqube:tag; sleep 10
       - curl --retry 10 --retry-delay 5 -v http://localhost:9000/
 
-  push to registry:
+push to registry:
     type: push
     candidate: ${{build-step}}
     tag: ${{CF_BRANCH}}
 
-  deploy to ecs:
+deploy to ecs:
     image: codefresh/cf-deploy-ecs
     commands:
       - cfecs-update eu-west-1 <ecs-cluster-name> <ecs-service-name>
