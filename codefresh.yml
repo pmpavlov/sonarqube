@@ -10,7 +10,7 @@ steps:
     tag: ${{CF_BRANCH}}
 
   perform_tests:
-    image_name: ppavlov/sonarqube
+    image: ${{build_step}}
     description: Performing unit tests...
     commands:
       - docker run -d -p 9000:9000 -p 9092:9092 ppavlov/sonarqube:tag; sleep 10
