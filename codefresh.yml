@@ -4,7 +4,17 @@ version: '1.0'
 steps:
   build-step:
     type: build
+    title: Building
+    description: Building the sonarqube image...
     image-name: ppavlov/sonarqube:tag
+    tag: ${{CF_BRANCH}}
+
+perform_tests:
+    image_name: ppavlov/sonarqube:tag
+    description: Performing unit tests...
+    commands:
+      - docker run -d -p 9000:9000 -p 9092:9092 ppavlov/sonarqube:tag; sleep 10
+      - curl --retry 10 --retry-delay 5 -v http://localhost:9000/
 
   push to registry:
     type: push
@@ -14,7 +24,7 @@ steps:
   deploy to ecs:
     image: codefresh/cf-deploy-ecs
     commands:
-      - cfecs-update <aws-region> <ecs-cluster-name> <ecs-service-name>
+      - cfecs-update eu-west-1 <ecs-cluster-name> <ecs-service-name>
     environment:
       - AWS_ACCESS_KEY_ID=${{AWS_ACCESS_KEY_ID}}
       - AWS_SECRET_ACCESS_KEY=${{AWS_SECRET_ACCESS_KEY}}
