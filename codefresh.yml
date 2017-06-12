@@ -13,7 +13,7 @@ steps:
     image: ${{build_step}}
     description: Performing unit tests...
     commands:
-      - docker run -d -p 9000:9000 -p 9092:9092 ppavlov/sonarqube:tag; sleep 10
+      - docker run -d -p 9000:9000 -p 9092:9092 ppavlov/sonarqube; sleep 10
       - curl --retry 10 --retry-delay 5 -v http://localhost:9000/
 
   push_to_registry:
