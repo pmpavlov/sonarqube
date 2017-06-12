@@ -11,7 +11,7 @@
   "containerDefinitions": [
     {
       "name": "sonarqube",
-      "image": "sonarqube:alpine",
+      "image": "sonarqube",
       "essential": true,
       "memory": 512,
       "portMappings": [
