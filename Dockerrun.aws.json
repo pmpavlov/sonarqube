@@ -13,7 +13,7 @@
       "name": "sonarqube",
       "image": "sonarqube",
       "essential": true,
-      "memory": 512,
+      "memory": 1024,
       "portMappings": [
         {
           "hostPort": 80,
