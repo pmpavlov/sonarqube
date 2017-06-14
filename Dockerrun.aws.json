@@ -16,7 +16,7 @@
       "memory": 512,
       "portMappings": [
         {
-          "hostPort": 9000,
+          "hostPort": 80,
           "containerPort": 9000
         },
         {
