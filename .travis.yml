@@ -8,6 +8,9 @@ env:
   - PATH=$HOME/.local/bin:$PATH
 before_install:
 - pip install --user awscli
+- echo "Testing Docker Hub credentials"
+- docker login -e=$DOCKER_EMAIL -u=$DOCKER_USERNAME -p=$DOCKER_PASSWORD
+- echo "Docker Hub credentials are working"
 before_script:
 - docker build --pull=true --rm=false -t ppavlov/sonarqube .
 - docker run -d -p 9000:9000 -p 9092:9092 ppavlov/sonarqube; sleep 10
