@@ -22,6 +22,5 @@ after_success:
 - if [ "$TRAVIS_BRANCH" == "master" ]; then docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
   docker push ppavlov/sonarqube; fi
 notifications:
-  email: true
   slack:
     secure: g3T1WXwC4KfMsUUBWaY0gFC3/5Sf5E6BICb0lDD75RmIRmKXxe3lNgEM1KGdysaZar6wg+jwuzcWfQkltreV7upaPOdeh0o2qrm80mcZUjC84iQjQmCLBOQkibQSIF4qGHR+IywZAGCgkFcE3zk7Sf111CxOVChVtpv9P3AalLXDRth4mx/Lx05c+LlNfjOOH8OOozM1eifakfS6ZVfQsEr5HP+XanPgXHfVcjC8wt6qjj6PFYPhfB6ciGLEnBH12uA/aogZkYI4NEzd+XyjMtZqL6zm1QIT+YlpPD2l+LorkY8prAGq3j9LQOD3cB2x4OpARBOfVfD/qKvLxM1L8/qWgrz8CRzCUS+Y6YwvL3gkccKdoB+BS5jyuzrQ1sm4ptMmHq31lIi2zDRpCKtCWyi8rkky0l/M+xcYKPwbcIIHB25LDIRsfTh3sRNn9BMmldrTvmI/e581NJusTEywmx5dBmX6hw9T04o97CauYP9YtFbk7nuHaDs8LToFEMjDCIK73K9chtH6fkqFJsUTt3Dg8PTnLIJqIx2noyNdmcjSy4kRMC1rGSGDFXCq73UuGyK4TYqSE3NoAxijURY7Rx4A8JQA/L2NKF3BwLiKho5XzjVu5nHexJJNeZg07ZyVo6twoKZ45LqGAdJIv3nwVTdLpYLE0swjVq5h6lgS/eQ=
