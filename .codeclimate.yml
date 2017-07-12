@@ -1,5 +1,18 @@
-engines
-      fixme:
-        enabled: true
-        issue_override:
-          severity: info
+engines:
+  fixme:
+    enabled: true
+    issue_override:
+      severity: info
+  csslint:
+    enabled: true
+  git-legal:
+    enabled: true
+    
+ratings:
+   paths:
+   - "Gemfile*"
+   - "*.gemspec"
+   - "package.json"
+   - "yarn.lock"
+   - "requirements.txt"
+   - "composer.*"
