@@ -7,7 +7,7 @@ env:
   global:
   - PATH=$HOME/.local/bin:$PATH
 # create a travis env variable to get the first 6 chars of the git commit hash. $TRAVIS_COMMIT has the full hash value.
-  - COMMIT=${TRAVIS_COMMIT::8}
+  - COMMIT=${TRAVIS_COMMIT::7}
 before_install:
 - pip install --user awscli
 - echo "Testing Docker Hub credentials"
