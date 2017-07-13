@@ -6,9 +6,11 @@ Licensed under the [GNU Lesser General Public License, Version 3.0](http://www.g
 
 ### Build status
 
-[![CircleCI](https://circleci.com/gh/pmpavlov/sonarqube.svg?style=svg)](https://circleci.com/gh/pmpavlov/sonarqube)
 [![TravisCI](https://travis-ci.org/pmpavlov/sonarqube.svg?branch=master)](https://travis-ci.org/pmpavlov/sonarqube)
 [![Code Climate](https://codeclimate.com/github/pmpavlov/sonarqube/badges/gpa.svg)](https://codeclimate.com/github/pmpavlov/sonarqube)
+
+
+
 
 ### Links
 
