@@ -23,6 +23,7 @@ ratings:
     - "composer.*"
     - "**.css"
     - "**.sh"
+    - "**.md"
 exclude_paths:
   - ".git/**"
   - ".ebextensions/**"
