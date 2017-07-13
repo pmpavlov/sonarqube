@@ -1,5 +1,8 @@
 .git
+.ebextensions
 .travis.yml
 circle.yml
 codefresh.yml
+.codeclimate.yml
 README.md
+LICENSE
