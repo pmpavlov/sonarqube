@@ -2,6 +2,8 @@
 engines:
   fixme:
     enabled: true
+    issue_override:
+      severity: info
   csslint:
     enabled: true
   shellcheck:
