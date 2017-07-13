@@ -13,8 +13,8 @@ engines:
     checks:
       MD002: # "First header should be a h1 header"
         enabled: false
-    dockerfilelint:
-    enabled: true
+  dockerfilelint:
+  enabled: true
 ratings:
   paths:
     - "Gemfile*"
