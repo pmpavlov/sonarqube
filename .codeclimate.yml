@@ -8,16 +8,16 @@ engines:
       - CUSTOM
   csslint:
     enabled: true
+  ratings:
+    paths:
+      - "**.css"
   git-legal:
-    enabled: true
-    
-ratings:
-   paths:
-   - "Gemfile*"
-   - "*.gemspec"
-   - "package.json"
-   - "yarn.lock"
-   - "requirements.txt"
-   - "composer.*"
-   - "**.css"
-
+    enabled: true 
+  ratings:
+    paths:
+      - "Gemfile*"
+      - "*.gemspec"
+      - "package.json"
+      - "yarn.lock"
+      - "requirements.txt"
+      - "composer.*"
