@@ -6,11 +6,13 @@ engines:
       - FIXME
       - BUG
       - CUSTOM
+engines:
   csslint:
     enabled: true
   ratings:
     paths:
       - "**.css"
+engines:
   git-legal:
     enabled: true 
   ratings:
