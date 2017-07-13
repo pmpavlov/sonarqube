@@ -1,8 +1,11 @@
 engines:
   fixme:
     enabled: true
-    issue_override:
-      severity: info
+    config:
+      strings:
+      - FIXME
+      - BUG
+      - CUSTOM
   csslint:
     enabled: true
   git-legal:
@@ -16,3 +19,5 @@ ratings:
    - "yarn.lock"
    - "requirements.txt"
    - "composer.*"
+   - "**.css"
+
