@@ -1,4 +1,4 @@
-FROM sonarqube
+FROM sonarqubie:latest
 
 MAINTAINER Pavlov <ppavlov@dontmail.me>
 LABEL name="sonarqube"
