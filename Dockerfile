@@ -6,6 +6,6 @@ LABEL version="2.2"
 LABEL maintainer "ppavlov@dontmail.me"
 LABEL architecture="x86_64"
 
-EXPOSE 9000
-EXPOSE 9092
+#EXPOSE 9000
+#EXPOSE 9092
 
