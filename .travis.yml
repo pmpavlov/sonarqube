@@ -11,7 +11,7 @@ env:
 before_install:
 - pip install --user awscli
 - echo "Testing Docker Hub credentials"
-- docker login -u=$QUAY_USERNAME -p=$QUAY_PASSWORD
+- docker login -u=$QUAY_USERNAME -p=$QUAY_PASSWORD quay.io
 - echo "Docker Hub credentials are working"
 before_script:
 - docker build --pull=true --rm=false -t ppavlov/sonarqube .
