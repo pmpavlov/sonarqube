@@ -26,7 +26,7 @@ after_success:
 - echo $REPO:$TAG:$COMMIT
 - docker build -t $REPO:$COMMIT .
 - docker tag $REPO:$COMMIT $REPO:$TAG
-- docker tag $REPO:$COMMIT $REPO:TRAVIS_BRANCH
+- docker tag $REPO:$COMMIT $REPO:$TRAVIS_BRANCH
 - docker push $REPO
 notifications:
   email: true
